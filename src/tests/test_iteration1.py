@@ -27,4 +27,11 @@ def test_set_armor_class():
     d.set_armor_class(9)
     assert d.armor_class == 9
 
+def test_get_hit_points():
+    d = Character()
+    assert d.hit_points == 5
 
+def test_set_hit_points():
+    d = Character()
+    d.set_hit_points(8)
+    assert d.hit_points == 8

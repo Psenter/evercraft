@@ -23,5 +23,11 @@ class Character:
     def set_armor_class(self, armor_class):
         self.armor_class = armor_class
 
+    def get_hit_points(self):
+        return self.hit_points
+
+    def set_hit_points(self, hit_points):
+        self.hit_points = hit_points
+
     
    
