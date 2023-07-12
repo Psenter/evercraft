@@ -29,5 +29,12 @@ class Character:
     def set_hit_points(self, hit_points):
         self.hit_points = hit_points
 
+# Don't know, check this later
+    def attack(self, roll, enemy):
+        roll = 10
+        if roll == 20:
+            return True
+        return roll >= enemy.get_armor_class()
+
     
    

@@ -35,3 +35,7 @@ def test_set_hit_points():
     d = Character()
     d.set_hit_points(8)
     assert d.hit_points == 8
+
+# Don't know, check this later
+def test_attack_success():
+
