@@ -37,5 +37,9 @@ def test_set_hit_points():
     assert d.hit_points == 8
 
 # Don't know, check this later
-def test_attack_success():
+def test_can_attack():
+    ourcharacter = Character("Attacker")
+    enemy = Character("Defender")
+    enemy.set_armor_class(9)
+    assert ourcharacter.attack(enemy) == True
 
