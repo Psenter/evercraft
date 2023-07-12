@@ -1,6 +1,7 @@
 from character import Character
 from morals import Alignment 
 from HP import Armor_Hitpoints
+from attack import Attack
 
 #Name
 def test_get_name():
@@ -57,3 +58,22 @@ def test_get_armor_hitpoints():
     x = Armor_Hitpoints(armor, hitpoints)
     assert x.armor == armor
     assert x.hitpoints == hitpoints
+
+#----------------------------------------------
+#Attack
+
+def test_can_attack_true():
+    roll = 20
+    attack = Attack(roll, 10)
+    if attack.can_attack():
+        print("Attack can happen")
+    else:
+        print("Attack cannot happen")
+
+def test_can_attack_false():
+    roll = 9
+    attack = Attack(roll, 10)
+    if attack.can_attack():
+        print("Attack can happen")
+    else:
+        print("Attack cannot happen")
