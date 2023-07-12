@@ -1,6 +1,7 @@
 from character import Character
 from morals import Alignment 
 
+#Name
 def test_get_name():
     c = Character("Bill")
     assert c.name == "Bill"
@@ -15,6 +16,8 @@ def test_set_name2():
     d.set_name("Joe")
     assert d.name == "Joe"
 
+#----------------------------------------------
+#Alignment
 
 def test_get_alignment():
     a = Alignment("Good")
