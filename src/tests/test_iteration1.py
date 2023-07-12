@@ -2,6 +2,9 @@ from character import Character
 from morals import Alignment 
 from HP import Armor_Hitpoints
 from attack import Attack
+from maincharacter import MainCharacter
+
+
 
 #Name
 def test_get_name():
