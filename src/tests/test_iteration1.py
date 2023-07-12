@@ -1,9 +1,30 @@
 from character import Character
-from morals import Alignment 
-from HP import Armor_Hitpoints
-from attack import Attack
-from maincharacter import MainCharacter
 
-def test_create_character():
-    character = MainCharacter("Bob")
-    assert character.get_name() == "Bob"
+def test_get_name():
+    d = Character()
+    assert d.name == "NightMan"
+
+def test_set_name():
+    d = Character()
+    d.set_name("Bob")
+    assert d.name == "Bob"
+
+def test_get_alignment():
+    d = Character()
+    assert d.alignment == "Neutral"
+
+def test_set_alignment():
+    d = Character()
+    d.set_alignment("Good")
+    assert d.alignment == "Good"
+
+def test_get_armor_class():
+    d = Character()
+    assert d.armor_class == 10
+
+def test_set_armor_class():
+    d = Character()
+    d.set_armor_class(9)
+    assert d.armor_class == 9
+
+
