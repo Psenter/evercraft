@@ -30,8 +30,7 @@ class Character:
         self.hit_points = hit_points
 
 # Don't know, check this later
-    def attack(self, enemy):
-        roll = 10
+    def attack(self,roll, enemy):
         if roll == 20:
             return True
         return roll >= enemy.get_armor_class()

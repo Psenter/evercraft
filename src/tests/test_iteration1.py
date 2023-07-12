@@ -38,8 +38,10 @@ def test_set_hit_points():
 
 # Don't know, check this later
 def test_can_attack():
-    ourcharacter = Character("Attacker")
-    enemy = Character("Defender")
+    ourcharacter = Character()
+    ourcharacter.set_name("Attacker")
+    enemy = Character()
+    enemy.set_name("Defender")
     enemy.set_armor_class(9)
-    assert ourcharacter.attack(enemy) == True
+    assert ourcharacter.attack(10, enemy) == True
 
