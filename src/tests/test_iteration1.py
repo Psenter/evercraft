@@ -45,3 +45,11 @@ def test_can_attack():
     enemy.set_armor_class(9)
     assert ourcharacter.attack(10, enemy) == True
 
+def test_cannot_attack():
+    ourcharacter = Character()
+    ourcharacter.set_name("Attacker")
+    enemy = Character()
+    enemy.set_name("Defender")
+    enemy.set_armor_class(11)
+    assert ourcharacter.attack(10, enemy) == False
+
