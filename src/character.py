@@ -149,3 +149,4 @@ class Character:
         self.level += 1
         constitution_modifier = self.get_constitution_modifier()
         self.hit_points += 5 + constitution_modifier
+

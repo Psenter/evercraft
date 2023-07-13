@@ -1,4 +1,5 @@
 from character import Character
+from fighter import Fighter
 
 #-------------------------------------
 #Name
@@ -192,8 +193,6 @@ def test_hit_points_increase_on_level_up():
     character = Character()
     character.set_ability_score("constitution", 10)
     character.set_hit_points(10)
-
     character.level_up()
-
     expected_hit_points = 10 + 5 + character.get_constitution_modifier()
     assert character.get_hit_points() == expected_hit_points
