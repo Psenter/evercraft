@@ -35,5 +35,12 @@ class Character:
             return True
         return roll >= enemy.get_armor_class()
 
+    def damage_taken(self, damage):
+        if damage > 0:
+            self.hit_points -= damage
+        if self.hit_points < 0:
+            self.hit_points = 0
+
+
     
    

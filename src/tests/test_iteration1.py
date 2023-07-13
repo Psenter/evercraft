@@ -53,3 +53,14 @@ def test_cannot_attack():
     enemy.set_armor_class(11)
     assert ourcharacter.attack(10, enemy) == False
 
+def test_damage_taken():
+     ourcharacter = Character()
+     ourcharacter.set_name("Attacker")
+     enemy = Character()
+     enemy.set_name("Defender")
+     enemyhitpoints = enemy.get_hit_points()
+     if ourcharacter.attack(10, enemy):
+        enemy.damage_taken(10)
+     assert enemy.get_hit_points() < enemyhitpoints
+
+
