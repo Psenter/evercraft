@@ -7,7 +7,7 @@ def test_hit_points_gain_per_level():
     fighter = Fighter()
     fighter.set_level(3)
     fighter.gain_experience(3000)
-    assert fighter.get_hit_points() == 55
+    assert fighter.get_hit_points() == 65
 
 def test_attack_bonus_per_level():
     fighter = Fighter()
