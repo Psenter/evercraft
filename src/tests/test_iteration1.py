@@ -12,6 +12,9 @@ def test_set_name():
     d.set_name("Bob")
     assert d.name == "Bob"
 
+#-------------------------------------
+#Alignment
+
 def test_get_alignment():
     d = Character()
     assert d.alignment == "Neutral"
@@ -20,6 +23,9 @@ def test_set_alignment():
     d = Character()
     d.set_alignment("Good")
     assert d.alignment == "Good"
+
+#-------------------------------------
+#Armor and HP
 
 def test_get_armor_class():
     d = Character()
@@ -39,7 +45,9 @@ def test_set_hit_points():
     d.set_hit_points(8)
     assert d.hit_points == 8
 
-# Don't know, check this later
+#-------------------------------------
+#Attack
+
 def test_can_attack():
     ourcharacter = Character()
     ourcharacter.set_name("Attacker")
@@ -56,6 +64,9 @@ def test_cannot_attack():
     enemy.set_armor_class(11)
     assert ourcharacter.attack(10, enemy) == False
 
+#-------------------------------------
+#Damage
+
 def test_damage_taken():
      ourcharacter = Character()
      ourcharacter.set_name("Attacker")
@@ -65,5 +76,9 @@ def test_damage_taken():
      if ourcharacter.attack(10, enemy):
         enemy.damage_taken(10)
      assert enemy.get_hit_points() < enemyhitpoints
+
+def test_is_alive():
+    character = Character()
+    assert character.is_alive() == True
 
 
