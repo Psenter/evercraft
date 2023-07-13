@@ -1,6 +1,5 @@
 class Character:
 
-
     #-------------------------------------
     #Name
     def __init__(self):
