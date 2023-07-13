@@ -80,6 +80,24 @@ def test_can_attack_with_modifier():
     enemy.set_armor_class(9)
     assert ourcharacter.attack(10, enemy) == True
 
+def test_attack_roll_bonus_on_even_level():
+    character = Character()
+    character.set_name("Test Character")
+    character.set_level(4)
+    enemy = Character()
+    enemy.set_name("Enemy")
+    enemy.set_armor_class(10)
+    assert character.attack(10, enemy)
+
+def test_no_attack_roll_bonus_on_odd_level():
+    character = Character()
+    character.set_name("Test Character")
+    character.set_level(3)
+    enemy = Character()
+    enemy.set_name("Enemy")
+    enemy.set_armor_class(10)
+    assert character.attack(10, enemy)
+
 #-------------------------------------
 #Damage
 
@@ -101,11 +119,9 @@ def test_damage_taken_with_modifier():
     ourcharacter = Character()
     ourcharacter.set_name("Attacker")
     ourcharacter.set_ability_score("strength", 14)
-
     enemy = Character()
     enemy.set_name("Defender")
     enemy.set_hit_points(15)
-
     enemyhitpoints = enemy.get_hit_points()
     damage = 10 + ourcharacter.get_strength_modifier()
     enemy.damage_taken(damage)
@@ -167,3 +183,17 @@ def test_gain_experience():
     Attacker.attack(10, Defender)
     assert Attacker.experience_points == starting_xp + 10
 
+def test_level_up():
+    character = Character()
+    character.gain_experience(1000)
+    assert character.get_level() == 2
+
+def test_hit_points_increase_on_level_up():
+    character = Character()
+    character.set_ability_score("constitution", 10)
+    character.set_hit_points(10)
+
+    character.level_up()
+
+    expected_hit_points = 10 + 5 + character.get_constitution_modifier()
+    assert character.get_hit_points() == expected_hit_points

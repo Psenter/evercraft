@@ -58,6 +58,8 @@ class Character:
             self.gain_experience(10)
             return True
         attack_roll = roll + self.get_strength_modifier()
+        if self.level % 2 == 0:
+            attack_roll += 1
         if attack_roll >= enemy.get_armor_class():
             self.gain_experience(10)
             return True
@@ -125,3 +127,25 @@ class Character:
     
     def gain_experience(self, points):
         self.experience_points += points
+
+    def gain_experience(self,points):
+        self.experience_points += points
+        if self.experience_points >= self.get_experience_needed_for_level_up():
+            self.level_up()
+
+    def get_experience_points(self):
+        return self.experience_points
+
+    def get_level(self):
+        return self.level
+
+    def set_level(self, level):
+        self.level = level
+
+    def get_experience_needed_for_level_up(self):
+        return 1000 * self.level
+
+    def level_up(self):
+        self.level += 1
+        constitution_modifier = self.get_constitution_modifier()
+        self.hit_points += 5 + constitution_modifier
