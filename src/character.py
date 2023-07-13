@@ -6,7 +6,7 @@ class Character:
         self.name = "NightMan"
         self.alignment = "Neutral"
         self.armor_class = 10 
-        self.hit_points = 5
+        self.hit_points = 5   
 
     def get_name(self):
         return self.name
@@ -52,5 +52,9 @@ class Character:
     def damage_taken(self, damage):
         if damage > 0:
             self.hit_points -= damage
-        if self.hit_points < 0:
+        if self.hit_points <= 0:
             self.hit_points = 0
+
+    def is_alive(self):
+        return self.hit_points > 0
+         
