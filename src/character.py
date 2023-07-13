@@ -1,4 +1,8 @@
 class Character:
+
+
+    #-------------------------------------
+    #Name
     def __init__(self):
         self.name = "NightMan"
         self.alignment = "Neutral"
@@ -11,12 +15,18 @@ class Character:
     def set_name(self, name):
         self.name = name
 
+    #-------------------------------------
+    #Alignment
+
     def get_alignment(self):
         return self.alignment 
 
     def set_alignment(self, alignment):
         self.alignment = alignment 
     
+    #-------------------------------------
+    #Armor and HP
+
     def get_armor_class(self):
         return self.armor_class
 
@@ -29,18 +39,19 @@ class Character:
     def set_hit_points(self, hit_points):
         self.hit_points = hit_points
 
-# Don't know, check this later
+    #-------------------------------------
+    #Attack
+
     def attack(self,roll, enemy):
         if roll == 20:
             return True
         return roll >= enemy.get_armor_class()
 
+    #-------------------------------------
+    #Damage
+    
     def damage_taken(self, damage):
         if damage > 0:
             self.hit_points -= damage
         if self.hit_points < 0:
             self.hit_points = 0
-
-
-    
-   

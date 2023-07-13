@@ -1,5 +1,8 @@
 from character import Character
 
+#-------------------------------------
+#Name
+
 def test_get_name():
     d = Character()
     assert d.name == "NightMan"
