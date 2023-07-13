@@ -1,12 +1,20 @@
 class Character:
 
     #-------------------------------------
-    #Name
+    #Name, armor, HP, abilities
     def __init__(self):
         self.name = "NightMan"
         self.alignment = "Neutral"
         self.armor_class = 10 
-        self.hit_points = 5   
+        self.hit_points = 5
+        self.abilities = {
+            "strength": 10,
+            "dexterity": 10,
+            "constitution": 10,
+            "wisdom": 10,
+            "intellegence": 10,
+            "charisma": 10
+        }
 
     def get_name(self):
         return self.name
@@ -57,4 +65,24 @@ class Character:
 
     def is_alive(self):
         return self.hit_points > 0
-         
+
+    #-------------------------------------
+    #Abilities
+
+    def get_strength(self, ability):
+        return self.abilities[ability]
+
+    def get_dexterity(self, ability):
+        return self.abilities[ability]
+
+    def get_constitution(self, ability):
+        return self.abilities[ability]
+
+    def get_wisdom(self, ability):
+        return self.abilities[ability]
+
+    def get_intellegence(self, ability):
+        return self.abilities[ability]
+
+    def get_charisma(self, ability):
+        return self.abilities[ability]

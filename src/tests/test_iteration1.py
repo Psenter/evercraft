@@ -81,4 +81,14 @@ def test_is_alive():
     character = Character()
     assert character.is_alive() == True
 
+#-------------------------------------
+#Abilities
 
+def test_ability():
+    character = Character()
+    assert character.get_strength("strength") == 10
+    assert character.get_dexterity("dexterity") == 10
+    assert character.get_constitution("constitution") == 10
+    assert character.get_wisdom("wisdom") == 10
+    assert character.get_intellegence("intellegence") == 10
+    assert character.get_charisma("charisma") == 10
